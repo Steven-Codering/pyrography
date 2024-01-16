@@ -15,7 +15,7 @@
 					<input ng-model="product.productName" required ng-minlength="2"
 						name="productName" type="text" class="form-control" id="productName">
 						<span class="text-danger" ng-if="!updateForm.productName.$valid">
-							required and must be at least 2 characters
+							Invalid name value
 						</span>
 				</div>
 				<div class="form-group">
@@ -23,7 +23,7 @@
 					<input ng-model="product.productRating"  required name ="productRating"
 						type="number" class="form-control" id="productRating">
 						<span class="text-danger" ng-if="!updateForm.productRating.$valid">
-							required and must be betweeen 1935 and 2025, inclusive
+							Invalid rating value
 						</span>
 				</div>
 				<div class="form-group">
@@ -31,7 +31,7 @@
 					<input ng-model="product.productPrice" required name ="productPrice"
 						type="number" class="form-control" id="productPrice">
 						<span class="text-danger" ng-if="!updateForm.productPrice.$valid">
-							required and must be betweeen 1935 and 2025, inclusive
+							Invalid price value
 						</span>
 				</div>
 				<div class="form-group">
@@ -39,7 +39,7 @@
 					<input ng-model="product.productQuantity" required name ="productQuantity"
 						type="number" class="form-control" id="productQuantity">
 						<span class="text-danger" ng-if="!updateForm.productQuantity.$valid">
-							required and must be betweeen 1935 and 2025, inclusive
+							Invalid Quantity value
 						</span>
 				</div>
 				<div class="form-group">
