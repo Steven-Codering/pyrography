@@ -1,0 +1,56 @@
+<style>
+	.search-input {
+		left: 90.5%;
+		transform: translateX(-50%);
+	}
+</style>
+<div class="text-center">
+	<div style="background-image: url('./images/woodbackground10.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top: .2em solid orange;
+	border-bottom: .2em solid black;">
+		<h1 class="text-light">Shop Pyrography</h1>
+		<span class="search-input float-right text-light">
+			Search:<input type="text" maxlength="50" ng-model="searchValue">
+		</span>
+		<br>
+		<br>			
+	</div>
+</div>
+
+<!-- Product -->
+
+<div style="background-image: url('./images/woodbackground11.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-bottom: .1em solid black;">
+	<div class="row">
+		<div class="col-sm-7">
+		</div>
+		<div class="col-sm-4">
+		</div>
+	</div>
+	
+	<div class="container mt-5 bg-light">
+		<br>
+		<div class="row" style="height:1100px; overflow-y:scroll;">
+			<div class="col-md-3 mb-3" ng-repeat="product in supplies | filter: searchValue" ng-if="$index % 1 == 0">
+				<div class="card">
+					<div>
+						<img src="./product-images/{{product.id}}.jpg" class="img-fluid card-img-top"
+							style="width:322px;height:322px;" alt="src=./product-images/{{product.id}}.webp">
+					</a>
+					<div class="card-body">
+						<h5 class="card-title">
+							{{product.productName}}<br><br>${{product.productPrice}}</h5>
+						<p class="card-text"></p>
+						<div class="btn btn-primary" ng-click="addToCart(product)">Add
+							to Cart</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+</div>

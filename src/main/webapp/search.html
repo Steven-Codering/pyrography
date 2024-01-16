@@ -1,0 +1,59 @@
+<style>
+	.myspinner {
+		height: 100vh;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+<div class="card mt-3" style="background-image: url('./images/woodbackground10.avif');">
+	<div class="card-header text-light">
+		<div class="img-fluid" alt="Header Image">
+		<h4>Search For Products</h4>
+		<button class="btn btn-success" ng-click="getAllSupplies()">Refresh Products</button>
+		<span class="float-right">
+			Search:<input type="text" maxlength="15" ng-model="searchValue">
+		</span>
+		</div>
+	</div>
+</div>
+	<div class="card-body">
+		<table class="table table-hover">
+			<thead class="thead-light">
+				<tr>
+					<th><button class="btn btn-success" ng-click="orderByColumn('id')">Product ID</button></th>
+					<th>Product Name</th>
+					<th>Rating</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Difficulty</th>
+					<th>Create Date</th>
+					<th>Update Date</th>
+				</tr>
+			</thead>
+			<tbody ng-show="!showSpinner">
+				<tr ng-repeat="product in supplies | filter: searchValue |orderBy:orderByValue:reverse" 
+					ng-click="goToUpdateView(product.id)">
+					<td>{{product.id}}</td>
+					<td>{{product.productName}}</td>
+					<td>{{product.productRating}}</td>
+					<td>{{product.productPrice}}</td>
+					<td>{{product.productQuantity}}</td>
+					<td>{{product.difficulty}}</td>
+					<td>{{product.createDateTime | date: 'medium' | limitTo: 12}}</td>
+					<td>{{product.updateDateTime | date: 'medium' | limitTo: 12}}</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		<div ng-show="showSpinner" class="myspinner">
+	<div class="spinner-border" style="width: 5rem; height: 5rem;"></div>
+	<br>
+	<p>Loading search results...</p>
+</div>
+	</div>
+	<div class="card-footer text-light" style="background-color: black;">
+		Select a product to update or delete
+	</div>
+</div>

@@ -1,0 +1,155 @@
+
+
+<script>
+
+	//funfact1
+	$("#modalButton").click(function() {
+  $('#glassAnimals').modal({
+    backdrop: 'static'
+  });
+});
+$('#glassAnimals').on('shown.bs.modal', function (e) {
+  console.log('hey');
+  $("#modalButton").removeClass( "btn-danger" ).addClass( "btn-secondary" );
+});
+
+	//funfact2
+	$("#modalButton2").click(function() {
+  $('#glassAnimals2').modal({
+    backdrop: 'static'
+  });
+});
+$('#glassAnimals2').on('shown.bs.modal', function (e) {
+  console.log('hey');
+  $("#modalButton2").removeClass( "btn-danger" ).addClass( "btn-secondary" );
+});
+</script>
+
+
+<div class="text-center">
+
+	<div style="background-image: url('./images/woodbackground10.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top: .2em solid orange;
+	border-bottom: .2em solid black;">
+		<h1 class="text-light">Fun Facts</h1>
+		<h4 class="text-light"><i>
+				Whether you're a seasoned pyrography artist or just discovering this captivating form of expression,<br>
+				these fun facts highlight the diversity and historical significance of pyrography as an art form.
+			</i></h4>
+	</div>
+
+
+	<div style="background-image: url('./images/woodbackground14.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-bottom: .1em solid black;">
+		<div class="container">
+			<br>
+			<div class="container-fluid">
+				<section id="tips-section">
+					<h2 class="mb-4"></h2>
+
+					<div class="card-deck">
+						<div class="row">
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Pyrography has ancient roots and can be traced back to various
+										cultures throughout history. The
+										Egyptians,
+										Greeks, and some African tribes practiced the art of decorating wood with
+										controlled burns.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">While ancient pyrographers used hot metal rods to create burns,
+										modern pyrography artists use
+										electrically
+										heated pens with adjustable temperature controls for more precision and
+										versatility.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">The art experienced a revival during the Renaissance when
+										artists used pyrography to enhance their
+										woodwork
+										and furniture creations.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Pyrography is not limited to wood. Artists often use gourds as
+										a canvas for their creations, adding a
+										unique
+										texture and shape to their artwork.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Many contemporary artists have embraced pyrography, pushing the
+										boundaries of the art form. They
+										incorporate
+										the technique into diverse mediums, including sculptures, leatherwork, and
+										paper.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Pyrography is not only a creative outlet but also has
+										therapeutic benefits. The focus and concentration
+										required can provide a calming and meditative experience for practitioners.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Some pyrography artists experiment with natural pigments or
+										watercolors to add color to their burned
+										creations.
+										This adds an additional layer of complexity and visual appeal to the artwork.
+									</p>
+									<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">There are international guilds and communities dedicated to
+										pyrography, where artists share their
+										techniques,
+										showcase their work, and support each other in the pursuit of this unique art
+										form.</p>
+										<div class="wave-container"></div>
+								</div>
+							</div>
+							<div class="card mb-3 col-sm-4">
+								<div class="card-body">
+									<p class="card-text">Pyrography is often used to create functional art, such as
+										custom-made wooden kitchenware, utensils,
+										and furniture. The burned designs add a personalized touch to everyday items.
+									</p>
+									<div class="wave-container"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<br>
+				<hr>
+			</div>			
+		</div>
+	</div>
+</div>

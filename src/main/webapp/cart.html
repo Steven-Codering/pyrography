@@ -1,0 +1,18 @@
+
+	<div class="display-4 text-center p-3 text-light"
+	style="background-image: url('./images/woodbackground10.avif');
+	border-top : .07em solid orange;">
+	Welcome To Your Cart</div>
+	<div class="card text-center">
+		<div class="card-body">		
+			<div ng-repeat="product in cart track by $index">
+				{{product.name}} - ${{product.price}}
+			</div>
+		</div>
+		<div class="card-footer">
+			<h4>Total: ${{total}}</h4>
+			<button class="btn btn-info" ng-click="emptyMyCart()">Empty Cart</button>
+		</div>
+	</div>
+
+

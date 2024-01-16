@@ -1,0 +1,76 @@
+<div class="text-center bg-light">	
+		<div style="background-image: url('./images/woodbackground15.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top: .2em solid orange;
+	border-bottom: .1em solid black;">
+<div ng-controller="quizController">
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="text-center">Product Suggestion Quiz</h1>
+      </div>
+      <div class="card-body">
+        <form ng-submit="submitQuiz()">
+          <!-- Question 1 -->
+          <div class="form-group">
+            <label>How long have you used pyrography?</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q1" ng-model="answers.q1" value="Less than a year">
+              <label class="form-check-label">Less than a year</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q1" ng-model="answers.q1" value="1 to 2 years">
+              <label class="form-check-label">1 to 2 years</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q1" ng-model="answers.q1" value="2 to 4 years">
+              <label class="form-check-label">2 to 4 years</label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="form-group">
+            <label>How often each week do you practice?</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q2" ng-model="answers.q2" value="Once a week">
+              <label class="form-check-label">Once a week</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q2" ng-model="answers.q2" value="2 to 3 times per week">
+              <label class="form-check-label">2 to 3 times per week</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q2" ng-model="answers.q2" value="3 to 5 times per week">
+              <label class="form-check-label">3 to 5 times per week</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>How long do you spend each session practicing pyrography?</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q3" ng-model="answers.q3" value="Less than 1 hour">
+              <label class="form-check-label">Less than 1 hour</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" name="q3" ng-model="answers.q3" value="More than 1 hour">
+              <label class="form-check-label">More than 1 hour</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+		<br>
+        <!-- Display product suggestions -->
+        <div ng-show="showSuggestions" class="text-warning bg-secondary">
+          <h2>Your Product Suggestions:</h2>
+          <ul>
+            <li ng-repeat="product in suggestedProducts">{{product}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>

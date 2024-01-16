@@ -1,0 +1,88 @@
+<!--<style>
+	body { 
+	  background: url(images/movie_reel.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
+</style>-->
+<div class="text-center bg-light">	
+		<div style="background-image: url('./images/woodbackground15.avif'); 
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top: .2em solid orange;
+	border-bottom: .1em solid black;">
+<div class="container-fluid">
+<div class="row pt-3 justify-content-center">
+	
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3>Create Product</h3>
+				<h5 class="text-success" ng-bind="createStatus"></h5>
+			</div>			
+			<div class="card-body">
+			<form name="createForm">
+				<div class="form-group">
+					<label for="productName" class="font-weight-bold">Name:</label>
+					<input ng-model="product.productName" required ng-minlength="2" name="productName"
+						type="text" class="form-control" id="productName">					
+					<span ng-show="createForm.productName.$touched && createForm.productName.$invalid"
+						class="text-danger">
+						Required and must be at least two characters.
+					</span>					
+				</div>
+				<div class="form-group">
+					<label for="productRating" class="font-weight-bold">Rating:</label>
+					<input ng-model="product.productRating"  required
+						type="number" class="form-control" id="productRating" name="productRating">					
+					<span ng-show="createForm.productRating.$touched && createForm.productRating.$invalid"
+						class="text-danger">
+						Required and must be between 1 and 5
+					</span>	
+				</div>
+				<div class="form-group">
+					<label for="productPrice" class="font-weight-bold">Price:</label>
+					<input ng-model="product.productPrice" required	type="number" 
+						class="form-control" id="productPrice" name="productPrice">					
+					<span ng-show="createForm.productPrice.$touched && createForm.productPrice.$invalid"
+						class="text-danger">
+						Required and must be between $0.01 or higher
+					</span>	
+				</div>
+				<div class="form-group">
+					<label for="productQuantity" class="font-weight-bold">Quantity In Stock:</label>
+					<input ng-model="product.productQuantity" required	type="number" 
+						class="form-control" id="productQuantity" name="productQuantity">					
+					<span ng-show="createForm.productQuantity.$touched && createForm.productQuantity.$invalid"
+						class="text-danger">
+						Required and must be between 1 and 200
+					</span>	
+				</div>
+				<div class="form-group">
+					<label for="difficulty" class="font-weight-bold">Difficulty:</label>
+					<select ng-options="value for value in difficultys" required name="difficulty"
+						ng-model="product.difficulty" class="form-control" id="difficulty">
+					</select>
+					<span ng-show="createForm.difficulty.$touched && createForm.difficulty.$invalid"
+						class="text-danger">
+						Required and must have a difficulty category
+					</span>	
+				</div>				
+			</form>
+			</div>
+		</div>
+		<div class="card-footer text-center">
+			<button type="button" class="btn btn-success"
+				ng-disabled="createForm.$invalid || disableCreate"
+				ng-click="createProduct()">Create</button>			
+			<button type="button" class="btn btn-info"
+				ng-click="clear()">Clear</button>
+		</div>
+		</div>
+	</div>
+	
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>

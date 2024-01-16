@@ -1,0 +1,83 @@
+<div class="row">
+	<div class="col-sm-3">				
+	</div>
+	<div class="col-sm-6">
+		<div class="card bg-light">
+			<div class="card-header text-center">
+				<h3>Update Product</h3>
+				<h5 class="text-success text-center" ng-bind="updateStatus"></h5>
+			</div>			
+		
+			<div class="card-body">
+			<form name="updateForm">
+				<div class="form-group">
+					<label for="productName" class="font-weight-bold">Product Name:</label>
+					<input ng-model="product.productName" required ng-minlength="2"
+						name="productName" type="text" class="form-control" id="productName">
+						<span class="text-danger" ng-if="!updateForm.productName.$valid">
+							required and must be at least 2 characters
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="productRating" class="font-weight-bold">Rating:</label>
+					<input ng-model="product.productRating"  required name ="productRating"
+						type="number" class="form-control" id="productRating">
+						<span class="text-danger" ng-if="!updateForm.productRating.$valid">
+							required and must be betweeen 1935 and 2025, inclusive
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="productPrice" class="font-weight-bold">Price:</label>
+					<input ng-model="product.productPrice" required name ="productPrice"
+						type="number" class="form-control" id="productPrice">
+						<span class="text-danger" ng-if="!updateForm.productPrice.$valid">
+							required and must be betweeen 1935 and 2025, inclusive
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="productQuantity" class="font-weight-bold">Quantity In Stock:</label>
+					<input ng-model="product.productQuantity" required name ="productQuantity"
+						type="number" class="form-control" id="productQuantity">
+						<span class="text-danger" ng-if="!updateForm.productQuantity.$valid">
+							required and must be betweeen 1935 and 2025, inclusive
+						</span>
+				</div>
+				<div class="form-group">
+					<label for="difficulty" class="font-weight-bold">Difficulty:</label>
+					<select ng-options="value for value in difficultys"
+						ng-model="product.difficulty" class="form-control" id="difficulty">
+					</select>
+				</div>
+				<div>
+					<span class="font-weight-bold">Product ID:</span> <span
+						ng-bind="product.id" id="id"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Create Date:</span> <span
+						ng-bind="product.createDateTime" id="create"></span>
+				</div>
+				<div>
+					<span class="font-weight-bold">Update Date:</span> <span
+						ng-bind="product.updateDateTime" id="update"></span>
+				</div>
+			</form>
+			</div>
+			<div class="card-footer text-center">
+				<button type="button" class="btn btn-success"
+				ng-disabled="updateForm.$invalid || disableUpdate"
+				ng-click="updateProduct()">
+					Update
+				</button>
+				<button type="button" class="btn btn-danger" ng-disabled="disableUpdate"
+				ng-click="deleteProduct()">
+					Delete
+				</button>
+				<button type="button" class="btn btn-info" ng-click="goToSearchView()">
+					Cancel
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-3">				
+	</div>
+</div>
